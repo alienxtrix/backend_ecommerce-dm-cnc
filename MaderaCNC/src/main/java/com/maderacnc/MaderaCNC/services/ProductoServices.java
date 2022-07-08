@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
-import com.maderacnc.MaderaCNC.Producto;
+import com.maderacnc.MaderaCNC.models.Producto;
 
 @Service
 public class ProductoServices {

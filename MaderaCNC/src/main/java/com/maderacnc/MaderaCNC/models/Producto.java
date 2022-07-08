@@ -1,12 +1,25 @@
-package com.maderacnc.MaderaCNC;
+package com.maderacnc.MaderaCNC.models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 // POJO de [ Producto ]
 // Plain Old Java Object
 
+@Entity
+@Table(name="producto")
 public class Producto {
 
 	// Variables del producto
-	private int product_id;
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column (unique = true, nullable = false)
+	private Long product_id;
+	@Column (name = "id", unique = true)
 	private String product_name;
 	private String product_img;
 	private double product_cost;
@@ -14,10 +27,10 @@ public class Producto {
 	private String product_description;
 	private int product_rate;
 	private int product_category; // Categoría
-	private static int count = 0; 	// Contador
 
-	public Producto (String product_name, String product_img, double product_cost, String product_status,
+	public Producto (Long product_id, String product_name, String product_img, double product_cost, String product_status,
 			String product_description, int product_rate, int product_category) {
+		this.product_id = product_id;
 		this.product_name = product_name;
 		this.product_img = product_img;
 		this.product_cost = product_cost;
@@ -25,13 +38,9 @@ public class Producto {
 		this.product_description = product_description;
 		this.product_rate = product_rate;
 		this.product_category = product_category;
-		count++;
-		this.product_id = count;
 	} // constructor
 
 	public Producto () {
-		count++;
-		this.product_id = count;
 	} // constructor
 
 	public String getProduct_name () {
@@ -90,7 +99,7 @@ public class Producto {
 		this.product_category = product_category;
 	} // setProduct_category
 
-	public int getProduct_id () {
+	public Long getProduct_id () {
 		return product_id;
 	} // getProduct_id
 

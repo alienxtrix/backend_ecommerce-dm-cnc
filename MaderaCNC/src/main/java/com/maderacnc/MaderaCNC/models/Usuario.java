@@ -1,7 +1,8 @@
-package com.maderacnc.MaderaCNC;
+package com.maderacnc.MaderaCNC.models;
 
 //POJO de [ Usuario ]
 //Plain Old Java Object
+
 
 public class Usuario {
 	

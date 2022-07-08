@@ -1,4 +1,4 @@
-package com.maderacnc.MaderaCNC;
+package com.maderacnc.MaderaCNC.models;
 
 //POJO de [ Categoria ]
 //Plain Old Java Object

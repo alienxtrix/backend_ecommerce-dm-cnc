@@ -2,9 +2,9 @@ package com.maderacnc.MaderaCNC.services;
 
 import java.util.ArrayList;
 
-import com.maderacnc.MaderaCNC.Categoria;
-
 import org.springframework.stereotype.Service;
+
+import com.maderacnc.MaderaCNC.models.Categoria;
 
 @Service
 public class CategoriaServices {
