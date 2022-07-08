@@ -19,7 +19,6 @@ public class Producto {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column (unique = true, nullable = false)
 	private Long product_id;
-	@Column (name = "id", unique = true)
 	private String product_name;
 	private String product_img;
 	private double product_cost;
