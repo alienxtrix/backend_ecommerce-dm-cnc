@@ -2,7 +2,7 @@ package com.maderacnc.MaderaCNC.controllers;
 
 import java.util.List;
 
-import com.maderacnc.MaderaCNC.Categoria;
+import com.maderacnc.MaderaCNC.models.Categoria;
 import com.maderacnc.MaderaCNC.services.CategoriaServices;
 
 import org.springframework.beans.factory.annotation.Autowired;

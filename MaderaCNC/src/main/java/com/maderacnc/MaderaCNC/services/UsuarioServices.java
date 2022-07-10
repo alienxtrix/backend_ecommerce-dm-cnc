@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import com.maderacnc.MaderaCNC.Usuario;
+
+import com.maderacnc.MaderaCNC.models.Usuario;
 
 @Service
 public class UsuarioServices {
