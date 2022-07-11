@@ -1,13 +1,24 @@
 package com.maderacnc.MaderaCNC.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 //POJO de [ Usuario ]
 //Plain Old Java Object
 
-
+@Entity
+@Table (name = "usuario")
 public class Usuario {
 	
 	// Variables del usuario
-	private int user_id;
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column (unique = true, nullable = false)
+	private Long user_id;
 	private String user_name;
 	private String user_lastNF;
 	private String user_lastNM;
@@ -15,10 +26,10 @@ public class Usuario {
 	private String user_pass;
 	private String user_phone;
 	private String user_email;
-	private static int count = 0; // Contador
 	
-	public Usuario (String user_name, String user_lastNF, String user_lastNM, String user_date, String user_pass, String user_phone, String user_email) {
+	public Usuario (Long user_id, String user_name, String user_lastNF, String user_lastNM, String user_date, String user_pass, String user_phone, String user_email) {
 		super();
+		this.user_id = user_id;
 		this.user_name = user_name;
 		this.user_lastNF = user_lastNF;
 		this.user_lastNM = user_lastNM;
@@ -26,16 +37,12 @@ public class Usuario {
 		this.user_pass = user_pass;
 		this.user_phone = user_phone;
 		this.user_email = user_email;
-		count++;
-		this.user_id=count;
 	} // Constructor
 	
-	public Usuario () {	
-		count ++;
-		this.user_id=count;
+	public Usuario () {
 	} // Constructor
 	
-	public int getUser_id () {
+	public Long getUser_id () {
 		return user_id;
 	} // getUser_id
 	
@@ -94,11 +101,12 @@ public class Usuario {
 	public void setUser_email (String user_email) {
 		this.user_email = user_email;
 	} // setUser_email
-	
+
 	@Override
-	public String toString () {
-		return "Usuario [nombre=" + user_name + ", apellidoP=" + user_lastNF + ", apellidoM=" + user_lastNM + ", fechaNac="
-				+ user_date + ", contraseña=" + user_pass + ", numero=" + user_phone + ", email=" + user_email + "]";
-	} // toString
-	
+	public String toString() {
+		return "Usuario [user_id=" + user_id + ", user_name=" + user_name + ", user_lastNF=" + user_lastNF
+				+ ", user_lastNM=" + user_lastNM + ", user_date=" + user_date + ", user_pass=" + user_pass
+				+ ", user_phone=" + user_phone + ", user_email=" + user_email + "]";
+	}// toString
+
 } // class Usuario

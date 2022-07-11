@@ -16,7 +16,7 @@ import com.maderacnc.MaderaCNC.services.UsuarioServices;
 @CrossOrigin(origins = "*")
 public class LoginController {
 
-	// Variable de instancia del usuarioServices
+// Variable de instancia del usuarioServices
 	private final UsuarioServices usuarioServices;
 
 	@Autowired
