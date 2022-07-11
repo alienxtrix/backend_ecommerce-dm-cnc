@@ -16,8 +16,8 @@ public class UsuarioController {
 	private final UsuarioServices usuarioServices;
 	
 	@Autowired
-	public UsuarioController (UsuarioServices usuarioServices) {
-		this.usuarioServices = usuarioServices;
+	public UsuarioController (com.maderacnc.MaderaCNC.services.UsuarioServices UsuarioServices) {
+		this.usuarioServices = UsuarioServices;
 	} // Constructor
 
 	@GetMapping

@@ -19,16 +19,16 @@ public class CategoriaController {
 	@Autowired
 	public CategoriaController (com.maderacnc.MaderaCNC.services.CategoriaServices CategoriaServices) {
 		this.CategoriaServices = CategoriaServices;
-	}
+	}//constructor
 	
 	@GetMapping
 	public List<Categoria> getAllCategories () {
 		return CategoriaServices.getCategories();
-	} // getAllProducts
+	} // getAllCategorys
 	
 	@GetMapping (path="{prodId}")
 	public Categoria getCategory (@PathVariable("prodId") Long id) {
 		return CategoriaServices.getCategory(id);
-	} // getProduct
+	} // getCategory
 	
 } // class CategoriaController
