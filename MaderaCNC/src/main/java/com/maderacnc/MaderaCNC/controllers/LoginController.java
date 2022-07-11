@@ -13,7 +13,7 @@ import com.maderacnc.MaderaCNC.services.UsuarioServices;
 
 @RestController
 @RequestMapping(path="/api/login/")
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")
 public class LoginController {
 
 	// Variable de instancia del usuarioServices

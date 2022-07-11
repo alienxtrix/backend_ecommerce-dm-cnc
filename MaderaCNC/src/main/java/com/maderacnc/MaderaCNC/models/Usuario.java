@@ -1,12 +1,17 @@
 package com.maderacnc.MaderaCNC.models;
 
+import javax.persistence.*;
+
 //POJO de [ Usuario ]
 //Plain Old Java Object
 
-
+@Entity
+@Table(name="usuario")
 public class Usuario {
 	
-	// Variables del usuario
+	@Id
+	@GeneratedValue (strategy = GenerationType.IDENTITY)
+	@Column (unique = true, nullable = false)
 	private int user_id;
 	private String user_name;
 	private String user_lastNF;
@@ -15,7 +20,6 @@ public class Usuario {
 	private String user_pass;
 	private String user_phone;
 	private String user_email;
-	private static int count = 0; // Contador
 	
 	public Usuario (String user_name, String user_lastNF, String user_lastNM, String user_date, String user_pass, String user_phone, String user_email) {
 		super();
@@ -26,13 +30,9 @@ public class Usuario {
 		this.user_pass = user_pass;
 		this.user_phone = user_phone;
 		this.user_email = user_email;
-		count++;
-		this.user_id=count;
 	} // Constructor
 	
 	public Usuario () {	
-		count ++;
-		this.user_id=count;
 	} // Constructor
 	
 	public int getUser_id () {

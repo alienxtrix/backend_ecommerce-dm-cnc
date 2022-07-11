@@ -1,11 +1,6 @@
 package com.maderacnc.MaderaCNC.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 // POJO de [ Producto ]
 // Plain Old Java Object
@@ -25,7 +20,7 @@ public class Producto {
 	private String product_status;
 	private String product_description;
 	private int product_rate;
-	private int product_category; // Categorï¿½a
+	private int product_category; // Categoría
 
 	public Producto (Long product_id, String product_name, String product_img, double product_cost, String product_status,
 			String product_description, int product_rate, int product_category) {
