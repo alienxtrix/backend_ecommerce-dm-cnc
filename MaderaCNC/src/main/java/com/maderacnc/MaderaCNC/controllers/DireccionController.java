@@ -48,7 +48,8 @@ public class DireccionController {
 				@RequestParam(required = false) Integer cp,
 				@RequestParam(required = false) String ciudad,
 				@RequestParam(required = false) String estado,
-				@RequestParam(required = false) String referencia
+				@RequestParam(required = false) String referencia,
+				@RequestParam(required = false) Long user_id
 				) 
 		{
 			return direccionServices.updateDir (
@@ -59,7 +60,8 @@ public class DireccionController {
 					cp, 
 					ciudad, 
 					estado,
-					referencia
+					referencia,
+					user_id
 					);
 			} // updateDireccion
 }// class DireccionController

@@ -19,8 +19,9 @@ public class Direccion {
 	@Column (nullable = false)
 	private String estado;
 	private String referencia;
-	public Direccion(Long id_direccion, String calle, String numero, String colonia, int cp, String ciudad, String estado, String referencia) {
-		
+	private Long user_id;
+	
+	public Direccion(Long id_direccion, String calle, String numero, String colonia, int cp, String ciudad, String estado, String referencia, Long user_id) {
 		this.id_direccion = id_direccion;
 		this.calle = calle;
 		this.numero = numero;
@@ -29,12 +30,20 @@ public class Direccion {
 		this.ciudad = ciudad;
 		this.estado = estado;
 		this.referencia = referencia;
-		
+		this.user_id = user_id;
 	}// constructor
 	
 	public Direccion() {
 	}// Constructor Default
 	
+	public Long getUser_id() {
+		return user_id;
+	}
+	
+	public void setUser_id(Long user_id) {
+		this.user_id = user_id;
+	}
+
 	public Long getIdDireccion() {
 		return id_direccion;
 	}
@@ -80,13 +89,12 @@ public class Direccion {
 	public void setReferencia(String referencia) {
 		this.referencia = referencia;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Direccion [id_direccion=" + id_direccion + ", calle=" + calle + ", numero=" + numero + ", colonia="
 				+ colonia + ", cp=" + cp + ", ciudad=" + ciudad + ", estado=" + estado + ", referencia=" + referencia
-				+ "]";
-	}// toString
-
+				+ ", user_id=" + user_id + "]";
+	} // toString
 	
 } // class Direccion

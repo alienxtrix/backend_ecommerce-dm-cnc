@@ -21,8 +21,9 @@ public class Usuario {
 	private String user_pass;
 	private String user_phone;
 	private String user_email;
+	private int user_type_id;
 	
-	public Usuario (Long user_id, String user_name, String user_lastNF, String user_lastNM, String user_date, String user_pass, String user_phone, String user_email) {
+	public Usuario (Long user_id, String user_name, String user_lastNF, String user_lastNM, String user_date, String user_pass, String user_phone, String user_email, int user_type_id) {
 		super();
 		this.user_id = user_id;
 		this.user_name = user_name;
@@ -32,11 +33,20 @@ public class Usuario {
 		this.user_pass = user_pass;
 		this.user_phone = user_phone;
 		this.user_email = user_email;
+		this.user_type_id = user_type_id;
 	} // Constructor
 	
 	public Usuario () {	
 	} // Constructor
 	
+	public int getUserType_id() {
+		return user_type_id;
+	}
+
+	public void setUserType_id(int userType_id) {
+		this.user_type_id = userType_id;
+	}
+
 	public Long getUser_id () {
 		return user_id;
 	} // getUser_id
@@ -101,7 +111,7 @@ public class Usuario {
 	public String toString() {
 		return "Usuario [user_id=" + user_id + ", user_name=" + user_name + ", user_lastNF=" + user_lastNF
 				+ ", user_lastNM=" + user_lastNM + ", user_date=" + user_date + ", user_pass=" + user_pass
-				+ ", user_phone=" + user_phone + ", user_email=" + user_email + "]";
-	}// toString
-
+				+ ", user_phone=" + user_phone + ", user_email=" + user_email + ", userType_id=" + user_type_id + "]";
+	} // toString
+	
 } // class Usuario

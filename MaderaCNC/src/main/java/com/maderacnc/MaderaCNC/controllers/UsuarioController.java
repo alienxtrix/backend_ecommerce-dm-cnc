@@ -48,8 +48,10 @@ public class UsuarioController {
 			@RequestParam (required = false) String user_date,
 			@RequestParam (required = false) String user_pass,
 			@RequestParam (required = false) String user_phone,
-			@RequestParam (required = false) String user_email){
-		return usuarioServices.updateUser(user_id, user_name, user_lastNF, user_lastNM, user_date, user_pass, user_phone, user_email);
+			@RequestParam (required = false) String user_email,
+			@RequestParam (required = false) Integer userType_id
+			){
+		return usuarioServices.updateUser(user_id, user_name, user_lastNF, user_lastNM, user_date, user_pass, user_phone, user_email, userType_id);
 	} // updateUser
 	
 } // class UsuarioController

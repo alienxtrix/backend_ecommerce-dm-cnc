@@ -42,7 +42,7 @@ public class DireccionServices {
 		return tmpDir;	
 	} // addDir
 	
-	public Direccion updateDir (Long id_direccion, String calle, String numero, String colonia, Integer cp, String ciudad, String estado, String referencia) {
+	public Direccion updateDir (Long id_direccion, String calle, String numero, String colonia, Integer cp, String ciudad, String estado, String referencia, Long user_id) {
 		Direccion tmpDir = null;
 		if(direccionRepository.existsById(id_direccion)) {
 			tmpDir = direccionRepository.findById(id_direccion).get();
@@ -53,6 +53,7 @@ public class DireccionServices {
 				if (ciudad != null) tmpDir.setCiudad(ciudad);
 				if (estado != null) tmpDir.setEstado(estado);
 				if (referencia != null) tmpDir.setReferencia(referencia);
+				if (user_id != null) tmpDir.setUser_id(user_id);
 				direccionRepository.save(tmpDir);
 			} else {
 				System.out.println("La dirección con el id "+id_direccion+ " no existe");

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 //Plain Old Java Object
 
 @Entity
-@Table(name="categoria")
+@Table(name="categorias")
 public class Categoria {
 	// Variables de la categoria
 	@Id

@@ -3,6 +3,7 @@ package com.maderacnc.MaderaCNC.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.hibernate.usertype.UserType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
@@ -52,7 +53,7 @@ public class UsuarioServices {
 		return tmpUser;
 	} // addUser
 	
-	public Usuario updateUser (Long user_id, String user_name, String user_lastNF, String user_lastNM, String user_date, String user_pass, String user_phone, String user_email) {
+	public Usuario updateUser (Long user_id, String user_name, String user_lastNF, String user_lastNM, String user_date, String user_pass, String user_phone, String user_email, Integer userType_id) {
 		Usuario tmpUser = null;
 			if(usuarioRepository.existsById(user_id)) {
 				tmpUser=usuarioRepository.findById(user_id).get();
@@ -63,6 +64,7 @@ public class UsuarioServices {
 				if (user_pass != null) tmpUser.setUser_pass(user_pass);
 				if (user_phone != null) tmpUser.setUser_phone(user_phone);
 				if (user_email != null) tmpUser.setUser_email(user_email);
+				if (userType_id != null) tmpUser.setUserType_id(userType_id);
 				usuarioRepository.save(tmpUser);
 		} else {
 			System.out.println("El nombre con el id "+user_id+ " no existe");
