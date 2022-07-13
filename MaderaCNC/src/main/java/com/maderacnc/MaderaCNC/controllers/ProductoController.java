@@ -9,7 +9,7 @@ import com.maderacnc.MaderaCNC.services.ProductoServices;
 
 @RestController
 @RequestMapping (path="/api/products/")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class ProductoController {
 	
 	// Variable de instancia del categoriaServices

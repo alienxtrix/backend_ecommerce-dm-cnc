@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
+import com.maderacnc.MaderaCNC.models.Login;
 import com.maderacnc.MaderaCNC.models.Producto;
 import com.maderacnc.MaderaCNC.models.Usuario;
 
@@ -15,10 +16,8 @@ import com.maderacnc.MaderaCNC.models.Usuario;
 public class UsuarioServices {
 	private final UsuarioRepository usuarioRepository;
 	
-	
 	@Autowired
 	public UsuarioServices(UsuarioRepository usuarioRepository) {
-		super();
 		this.usuarioRepository = usuarioRepository;
 	}//constructor
 
@@ -75,13 +74,13 @@ public class UsuarioServices {
 	// ---------- LOGIN ----------
 	
 	@PostMapping
-	public String loginUser (String user_email, String user_pass) {
-		Optional<Usuario> prodByEmail=usuarioRepository.findByEmail(user_email);
-		String tmpUser = "Correo y/o contraseï¿½a incorrectos.";
+	public String loginUser (Login login) {
+		Optional<Usuario> prodByEmail = usuarioRepository.findByEmail(login.getUser_email());
+		String tmpUser = "Correo y/o contraseña incorrectos.";
 		if(prodByEmail.isPresent()) {
-			if(prodByEmail.get().getUser_pass().equals(user_pass)) {
+			if(prodByEmail.get().getUser_pass().equals(login.getUser_pass())) {
 				tmpUser = prodByEmail.get().getUser_name() + " " + prodByEmail.get().getUser_lastNF() + " " + prodByEmail.get().getUser_lastNM();
-				tmpUser = "\n Bienvenid@ " + tmpUser + ", se iniciï¿½ sesiï¿½n de manera correcta.";
+				tmpUser = "\n Bienvenid@ " + tmpUser + ", se inició sesión de manera correcta.";
 			}
 		} else {
 //			throw new IllegalArgumentException("El usuario con el email [" + user_email + "] no existe.");
