@@ -57,7 +57,7 @@ public class UsuarioServices {
 				if (user_pass != null) tmpUser.setUser_pass(user_pass);
 				if (user_phone != null) tmpUser.setUser_phone(user_phone);
 				if (user_email != null) tmpUser.setUser_email(user_email);
-				if (userType_id != null) tmpUser.setUserType_id(userType_id);
+				if (userType_id != null) tmpUser.setUser_type_id(userType_id);
 				usuarioRepository.save(tmpUser);
 		} else {
 			System.out.println("El nombre con el id "+user_id+ " no existe");

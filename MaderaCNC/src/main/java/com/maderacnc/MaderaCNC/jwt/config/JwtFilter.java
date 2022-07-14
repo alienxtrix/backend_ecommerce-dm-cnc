@@ -22,7 +22,7 @@ public class JwtFilter extends GenericFilterBean {
 		String authHeader =  httpServletRequest.getHeader("authorization");
 		if(("POST".equals(httpServletRequest.getMethod())) ||
 		   ("PUT".equals(httpServletRequest.getMethod())) ||
-		   ("DELET".equals(httpServletRequest.getMethod()))) {
+		   ("DELETE".equals(httpServletRequest.getMethod()))) {
 				if (authHeader == null || !authHeader.startsWith("Bearer: ")) {
 					throw new ServletException("1. Invalid Token");
 				}
