@@ -67,13 +67,20 @@ public class UsuarioServices {
 	
 	// ---------- LOGIN ----------
 	
-	public boolean validateUsuario(Login login) {
-		boolean res= false;
+	public int validateUsuario(Login login) {
+		int res= 0;
+		int type;
 	 	Optional<Usuario> findByEmail = usuarioRepository.findByEmail(login.getUser_email());
 	 	if(findByEmail.isPresent()) {
 	 		Usuario u = findByEmail.get();
 	 		if (u.getUser_pass().equals(login.getUser_pass())) {
-	 			res = true;
+	 			type = u.getUser_type_id();	
+	 			if(type==2) {
+	 			res = 2;
+	 			}
+	 			else if(type==1) {
+		 		res = 1;
+		 		}
 	 		}
 	 	}
 		return res;
