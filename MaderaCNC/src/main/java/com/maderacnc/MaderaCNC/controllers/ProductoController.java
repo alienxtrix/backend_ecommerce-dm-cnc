@@ -40,44 +40,44 @@ public class ProductoController {
 		return ProductoServices.addProduct(product);
 	} // addProduct
 
-	@PutMapping (path="{prodId}")
-	public Producto updateProduct (
-			@PathVariable("prodId") Long product_id,
-			@RequestBody Producto producto 
-	) {
-		return ProductoServices.updateProduct (
-				product_id, 
-				producto.getProduct_name(), 
-				producto.getProduct_img(), 
-				producto.getProduct_cost(), 
-				producto.getProduct_status(), 
-				producto.getProduct_description(), 
-				producto.getProduct_rate(),
-				producto.getProduct_category()
-		);
-	} // updateProduct
-	
 //	@PutMapping (path="{prodId}")
 //	public Producto updateProduct (
 //			@PathVariable("prodId") Long product_id,
-//			@RequestParam(required = false) String product_name,
-//			@RequestParam(required = false) String product_img,
-//			@RequestParam(required = false) Double product_cost,
-//			@RequestParam(required = false) String product_status,
-//			@RequestParam(required = false) String product_description,
-//			@RequestParam(required = false) Integer product_rate,
-//			@RequestParam(required = false) Integer product_category
+//			@RequestBody Producto producto 
 //	) {
 //		return ProductoServices.updateProduct (
 //				product_id, 
-//				product_name, 
-//				product_img, 
-//				product_cost, 
-//				product_status, 
-//				product_description, 
-//				product_rate,
-//				product_category
+//				producto.getProduct_name(), 
+//				producto.getProduct_img(), 
+//				producto.getProduct_cost(), 
+//				producto.getProduct_status(), 
+//				producto.getProduct_description(), 
+//				producto.getProduct_rate(),
+//				producto.getProduct_category()
 //		);
 //	} // updateProduct
+	
+	@PutMapping (path="{prodId}")
+	public Producto updateProduct (
+			@PathVariable("prodId") Long product_id,
+			@RequestParam(required = false) String product_name,
+			@RequestParam(required = false) String product_img,
+			@RequestParam(required = false) Double product_cost,
+			@RequestParam(required = false) String product_status,
+			@RequestParam(required = false) String product_description,
+			@RequestParam(required = false) Integer product_rate,
+			@RequestParam(required = false) Integer product_category
+	) {
+		return ProductoServices.updateProduct (
+				product_id, 
+				product_name, 
+				product_img, 
+				product_cost, 
+				product_status, 
+				product_description, 
+				product_rate,
+				product_category
+		);
+	} // updateProduct
 
 } // ProductoController

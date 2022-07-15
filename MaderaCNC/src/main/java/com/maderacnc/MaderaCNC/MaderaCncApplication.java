@@ -13,13 +13,13 @@ public class MaderaCncApplication {
 		SpringApplication.run(MaderaCncApplication.class, args);
 	} // main
 	
-   @Bean
-	public FilterRegistrationBean<JwtFilter> jwtFilter(){
-		FilterRegistrationBean<JwtFilter> registrationBean = new FilterRegistrationBean<JwtFilter>();
-	    registrationBean.setFilter(new JwtFilter());
-		registrationBean.addUrlPatterns("/api/products/*");
-		registrationBean.addUrlPatterns("/api/users/*");
-        return registrationBean;
-}
+   //@Bean
+//	public FilterRegistrationBean<JwtFilter> jwtFilter(){
+//		FilterRegistrationBean<JwtFilter> registrationBean = new FilterRegistrationBean<JwtFilter>();
+//	    registrationBean.setFilter(new JwtFilter());
+//		registrationBean.addUrlPatterns("/api/products/*");
+//		registrationBean.addUrlPatterns("/api/users/*");
+//        return registrationBean;
+//}
 
 } // class MaderaCncApplication
